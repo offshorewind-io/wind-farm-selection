@@ -14,12 +14,18 @@ def clean_coord(value):
         return None
 
 # Read the data
-file_path = 'Wind farm overview.xlsx' 
-df = pd.read_excel(file_path)
+file_path = 'Wind farm overview.csv' 
+df = pd.read_csv(file_path)
 
 # Clean data
 df['latitude'] = df['latitude'].apply(clean_coord)
 df['longitude'] = df['longitude'].apply(clean_coord)
+df['full_commissioning_year'] = df['full_commissioning_year'].apply(clean_coord)
+df['turbine_capacity_MW'] = df['turbine_capacity_MW'].apply(clean_coord)
+df['windfarm_capacity_MW'] = df['windfarm_capacity_MW'].apply(clean_coord)
+df['number_turbines'] = df['number_turbines'].apply(clean_coord)
+df['distance_from_shore'] = df['distance_from_shore'].apply(clean_coord)
+
 df.dropna(subset=['latitude', 'longitude'], inplace=True)
 
 data_columns = ['country', 
