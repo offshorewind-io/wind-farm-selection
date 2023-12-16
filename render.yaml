@@ -1,7 +1,7 @@
 services:
   # See https://render.com/docs/blueprint-spec for more info on render blueprints
   - type: web
-    name: wind-farm-selection
+    name: hacienda-racist-zephyr-jrc9
     env: python
     plan: free
     # A requirements.txt file must exist
